@@ -1,0 +1,5 @@
+FROM ubuntu:18.04
+
+LABEL maintainer="ccy1219@gmail.com"
+
+RUN apt-get update
