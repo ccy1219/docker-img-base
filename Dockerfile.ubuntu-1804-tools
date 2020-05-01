@@ -1,0 +1,8 @@
+FROM ccy1219/docker-img-base:ubuntu-1804-u
+
+LABEL maintainer="ccy1219@gmail.com"
+
+RUN apt-get install nano -y
+RUN apt-get install iputils-ping -y
+RUN apt-get install iproute2 -y
+RUN apt-get install htop -y
