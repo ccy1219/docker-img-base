@@ -14,7 +14,7 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN mkdir /root/.ssh
 
 
-# to change default password, pass args to dockerfile
+# to change default password, add "--build-arg password=XXX" when build image
 ARG password=root
 RUN echo "root:${password}" |chpasswd
 
