@@ -20,9 +20,8 @@ docker pull ccy1219/docker-img-base:python-37-ssh
 # 1) 可使用密碼 'root' 登入
 docker run -d --name demo_ssh ccy1219/docker-img-base:python-37-ssh
 # 2) 可使用 key file 登入
-docker run -d --name sshkey -v ~/your_keys/.ssh/:/root/.ssh:ro ccy1219/docker-img-base:python-37-ssh
+docker run -d --name demo_ssh -v $PWD/your_keys/.ssh/:/root/.ssh:ro ccy1219/docker-img-base:python-37-ssh
 # 資料夾 ~/your_keys/.ssh 須包含三個檔案 authorized_keys, id_rsa, id_rsa.pub
-# 產生方式:
-# ssh-keygen -q -t rsa -N '' -f ~/your_keys/.ssh/id_rsa
-# cat ~/your_keys/.ssh/id_rsa.pub >> ~/your_keys/.ssh/authorized_keys
+# 可使用 your_keys/gen_new_ssh_key.sh 產生新keys
+# 或直接已經在 .ssh 資料夾中產生好的 keys
 ```
