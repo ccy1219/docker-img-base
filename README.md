@@ -25,3 +25,7 @@ docker run -d --name demo_ssh -v $PWD/your_keys/.ssh/:/root/.ssh:ro ccy1219/dock
 # 可使用github repo資料夾裡的 your_keys/gen_new_ssh_key.sh 產生新keys，
 # 或直接已經在 .ssh 資料夾中產生好的 keys
 ```
+## ansible control node + SSH登入
+```bash
+docker pull ccy1219/docker-img-base:ansible-ssh
+```

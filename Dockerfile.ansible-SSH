@@ -1,0 +1,15 @@
+FROM ccy1219/docker-img-base:python-37-ssh
+
+LABEL maintainer="ccy1219@gmail.com"
+
+RUN apt-get update
+
+RUN pip install ansible pywinrm -y
+
+COPY ansible/ansible.cfg /root/ansible/ansible.cfg
+COPY ansible/hosts /root/ansible/hosts
+COPY ansible/gen_certificate.sh /root/ansible/gen_certificate/gen_certificate.sh
+
+RUN chmod +x /root/ansible/gen_certificate/gen_certificate.sh
+
+WORKDIR /root/ansible

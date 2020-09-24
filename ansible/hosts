@@ -1,0 +1,4 @@
+[testserver]
+192.168.56.1
+[testserver:vars]
+ansible_port=33022
