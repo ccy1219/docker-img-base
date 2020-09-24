@@ -4,7 +4,7 @@ LABEL maintainer="ccy1219@gmail.com"
 
 RUN apt-get update
 
-RUN pip install ansible pywinrm -y
+RUN pip install ansible pywinrm
 
 COPY ansible/ansible.cfg /root/ansible/ansible.cfg
 COPY ansible/hosts /root/ansible/hosts
