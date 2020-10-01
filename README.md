@@ -29,3 +29,7 @@ docker run -d --name demo_ssh -v $PWD/your_keys/.ssh/:/root/.ssh:ro ccy1219/dock
 ```bash
 docker pull ccy1219/docker-img-base:ansible-ssh
 ```
+## jenkins work node + SSH登入
+```bash
+docker pull ccy1219/docker-img-base:jenkins-node-ssh
+```
