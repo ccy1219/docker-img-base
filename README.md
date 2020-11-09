@@ -33,3 +33,12 @@ docker pull ccy1219/docker-img-base:ansible-ssh
 ```bash
 docker pull ccy1219/docker-img-base:jenkins-node-ssh
 ```
+
+## many-distro + SSH登入
+```bash
+# add more distro in build-many-distro-SSH.txt (notice: last line must be empty line)
+./build-many-distro-SSH.sh
+# edit docker-compose-many-distro-SSH.yml, then run
+docker-compose -f docker-compose-many-distro-SSH.yml up -d
+docker-compose -f docker-compose-many-distro-SSH.yml down
+```

@@ -1,0 +1,22 @@
+version: '3.6'
+
+services:
+    ubuntu2004:
+        image: 'ccy1219/docker-img-base:SSH-ubuntu-20.04'
+        tty: true
+        stdin_open: true
+        hostname: 'ubuntu2004'
+        ports:
+            - "55522:22"
+            - "55580:80"
+            - "55543:443"
+
+    debian100:
+        image: 'ccy1219/docker-img-base:SSH-debian-10.0'
+        tty: true
+        stdin_open: true
+        hostname: 'debian100'
+        ports:
+            - "55622:22"
+            - "55680:80"
+            - "55643:443"

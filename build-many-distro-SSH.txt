@@ -1,0 +1,7 @@
+ubuntu:16.04
+ubuntu:18.04
+ubuntu:20.04
+debian:9.0
+debian:9.13
+debian:10.0
+debian:10.6
