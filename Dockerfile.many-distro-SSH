@@ -29,6 +29,11 @@ RUN chmod 600 /root/.ssh/id_rsa && \
     chmod 600 /root/.ssh/authorized_keys && \
     cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 
+# Preprocess and install some packages for image
+COPY ["preprocess-many-distro-SSH.sh","/tmp/"]
+RUN chmod +x /tmp/preprocess-many-distro-SSH.sh \
+    && /tmp/preprocess-many-distro-SSH.sh
+
 # clean up
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
