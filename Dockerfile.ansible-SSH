@@ -4,6 +4,8 @@ LABEL maintainer="ccy1219@gmail.com"
 
 RUN apt-get update
 
+RUN apt-get install -y sshpass
+
 RUN pip install ansible pywinrm
 
 COPY ansible/ansible.cfg /root/ansible/ansible.cfg
