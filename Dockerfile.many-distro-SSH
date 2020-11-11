@@ -30,15 +30,18 @@ RUN chmod 600 /root/.ssh/id_rsa && \
     cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 
 # Preprocess and install some packages for image
-RUN apt-get install -y nano
+RUN apt-get install -y python3 python3-pip python3-apt
 # finish some complicated tasks in shell script
-COPY ["preprocess-many-distro-SSH.sh","/tmp/"]
-RUN chmod +x /tmp/preprocess-many-distro-SSH.sh \
-    && /tmp/preprocess-many-distro-SSH.sh
+# COPY ["preprocess-many-distro-SSH.sh","/tmp/"]
+# RUN chmod +x /tmp/preprocess-many-distro-SSH.sh \
+#     && /tmp/preprocess-many-distro-SSH.sh
+
+# Install some optional packages for developing
+RUN apt-get install -y nano
 
 # clean up
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# RUN apt-get clean && \
+#     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 EXPOSE 22
 CMD    ["/usr/sbin/sshd", "-D"]
